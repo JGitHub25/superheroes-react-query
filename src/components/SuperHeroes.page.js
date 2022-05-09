@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 export const SuperHeroesPage = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -12,12 +13,18 @@ export const SuperHeroesPage = () => {
         setIsLoading(false);
       })
       .catch((error) => {
+        setError(error.message);
+        setIsLoading(false);
         console.log(error);
       });
   }, []);
 
   if (isLoading) {
     return <h2>Loading...</h2>;
+  }
+
+  if (error) {
+    return <h3>{error}</h3>;
   }
 
   return (

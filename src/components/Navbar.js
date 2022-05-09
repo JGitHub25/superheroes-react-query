@@ -14,6 +14,9 @@ export const Navbar = () => {
           <li>
             <Link to="/rq-super-heroes">RQ super heroes</Link>
           </li>
+          <li>
+            <Link to="/super-heroes-instyle">In style</Link>
+          </li>
         </ul>
       </nav>
     </>
