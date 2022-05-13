@@ -17,6 +17,9 @@ export const Navbar = () => {
           <li>
             <Link to="/super-heroes-instyle">In style</Link>
           </li>
+          <li>
+            <Link to="/posts">Posts</Link>
+          </li>
         </ul>
       </nav>
     </>

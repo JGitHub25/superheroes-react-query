@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 //
-const fetchSuperhero = (heroId) => {
+const fetchSuperhero = ({ queryKey }) => {
+  const heroId = queryKey[1];
   try {
     return axios.get(`http://localhost:4000/superheroes/${heroId}`);
   } catch (error) {
@@ -11,7 +12,5 @@ const fetchSuperhero = (heroId) => {
 };
 
 export const useSingleHeroData = (heroId) => {
-  return useQuery(["super-hero", heroId], () => {
-    fetchSuperhero(heroId);
-  });
+  return useQuery(["super-hero", heroId], fetchSuperhero);
 };
