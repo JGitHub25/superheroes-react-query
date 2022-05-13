@@ -9,6 +9,9 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { SuperHeroesInStyle } from "./components/SuperHeroesInStyle.page";
 import SingleHeroPage from "./components/Op1.SingleHero.page";
 import { SuperMegaPosts } from "./components/Posts.page";
+import { ParallelQueries } from "./components/ParallelQueries.page";
+import { DynamicParallel } from "./components/DynamicParallel.page";
+import { DependentQueries } from "./components/DependentQueries.page";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -29,6 +32,12 @@ function App() {
             path="/super-heroes-instyle"
             element={<SuperHeroesInStyle />}
           />
+          <Route path="/rq-parallel" element={<ParallelQueries />} />
+          <Route
+            path="/rq-dynamic-parallel"
+            element={<DynamicParallel heroIds={[1, 3]} />}
+          />
+          <Route path="/rq-dependent" element={<DependentQueries id={3} />} />
         </Routes>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />

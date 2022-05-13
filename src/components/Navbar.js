@@ -20,6 +20,15 @@ export const Navbar = () => {
           <li>
             <Link to="/posts">Posts</Link>
           </li>
+          <li>
+            <Link to="/rq-parallel">Parallel queries</Link>
+          </li>
+          <li>
+            <Link to="/rq-dynamic-parallel">Dynamic parallel queries</Link>
+          </li>
+          <li>
+            <Link to="/rq-dependent">Dependent queries</Link>
+          </li>
         </ul>
       </nav>
     </>
